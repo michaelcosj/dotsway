@@ -1,0 +1,39 @@
+# ---------------------
+# KEYBINDINGS
+# ---------------------
+
+# Start a terminal
+set $term foot
+bindsym $super+Return exec $term
+
+# Start your launcher
+set $menu tofi-drun --drun-launch=true 
+bindsym $super+p exec $menu
+
+# Kill focused window
+bindsym $super+Shift+q kill
+
+# Reload the configuration file
+bindsym $super+Shift+c reload
+
+# Logout
+bindsym $super+Alt+l exec wlogout -p layer-shell 
+
+# Applications
+bindsym $super+Alt+f exec firefox
+
+# Volume
+bindsym --locked XF86AudioMute        exec ~/.config/sway/scripts/setvol.sh mute
+bindsym --locked XF86AudioLowerVolume exec ~/.config/sway/scripts/setvol.sh dec 
+bindsym --locked XF86AudioRaiseVolume exec ~/.config/sway/scripts/setvol.sh inc 
+
+# Brightness
+bindsym --locked XF86MonBrightnessUp    exec ~/.config/sway/scripts/setbri.sh inc 
+bindsym --locked XF86MonBrightnessDown  exec ~/.config/sway/scripts/setbri.sh dec
+
+# Screenshot
+bindsym Print exec ~/.config/sway/scripts/scrnsht.sh
+
+# Notifications
+bindsym $super+Shift+n exec makoctl menu \
+  tofi --prompt-text ' Actions: ' -c ~/.config/tofi/dmenu

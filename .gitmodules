@@ -1,0 +1,6 @@
+[submodule "pastavim"]
+	path = pastavim
+	url = git@github.com:michaelcosj/pastavim.git
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:michaelcosj/pastavim.git

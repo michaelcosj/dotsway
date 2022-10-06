@@ -1,0 +1,113 @@
+# ---------------------
+# WINDOWS
+# ---------------------
+
+set $up    k
+set $down  j
+set $left  h
+set $right l
+
+## Navigation
+# Move your focus around
+bindsym $super+$up    focus up
+bindsym $super+$down  focus down
+bindsym $super+$left  focus left
+bindsym $super+$right focus right
+# Ditto, with arrow keys
+bindsym $super+Up     focus up
+bindsym $super+Down   focus down
+bindsym $super+Left   focus left
+bindsym $super+Right  focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $super+Shift+$up    move up
+bindsym $super+Shift+$down  move down
+bindsym $super+Shift+$left  move left
+bindsym $super+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $super+Shift+Up     move up
+bindsym $super+Shift+Down   move down
+bindsym $super+Shift+Left   move left
+bindsym $super+Shift+Right  move right
+
+## Layout
+# Split focused window
+# $super+b or $super+v, for horizontal and vertical splits respectively.
+bindsym $super+b splith
+bindsym $super+v splitv
+
+# Make the current focus fullscreen
+bindsym $super+f fullscreen
+
+# Switch the current container between different layout styles
+bindsym $super+s layout stacking
+bindsym $super+w layout tabbed
+bindsym $super+e layout toggle split
+
+# Toggle the current focus between tiling and floating mode
+bindsym $super+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $super+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $super+a focus parent
+
+## Scratchpad:
+# Move the currently focused window to the scratchpad
+bindsym $super+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+bindsym $super+minus scratchpad show
+
+## Resizing 
+mode "resize" {
+  bindsym $up     resize shrink height  10px
+  bindsym $down   resize grow   height  10px
+  bindsym $left   resize shrink width   10px
+  bindsym $right  resize grow   width   10px
+
+  # Ditto, with arrow keys
+  bindsym Up    resize shrink height  10px
+  bindsym Down  resize grow   height  10px
+  bindsym Left  resize shrink width   10px
+  bindsym Right resize grow   width   10px
+
+  # Return to default mode
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $super+r mode "resize"
+
+# move floating windows with $super and left mouse button.
+# and resize with right mouse button + $super.
+floating_modifier $super normal
+
+## Rules
+# mpv
+for_window [app_id="mpv"] move workspace number 4
+for_window [app_id="mpv"] workspace number 4
+for_window [app_id="mpv"] fullscreen enable
+
+# firefox
+for_window [app_id="Firefox"] move workspace number 2
+for_window [app_id="Firefox"] layout tabbed
+for_window [app_id="Firefox" title="Picture-in-Picture"] floating enable
+for_window [app_id="Firefox" title="Picture-in-Picture"] sticky enable
+for_window [app_id="Firefox" title="Picture-in-Picture"] resize set 460 240
+for_window [app_id="Firefox" title="Picture-in-Picture"] move position 899 500
+
+# qimgv
+for_window [app_id="qimgv"] floating enable
+for_window [app_id="qimgv"] border normal
+
+# others
+for_window [app_id="pcmanfm"]   move workspace number 3
+for_window [class="Gimp-2.10"]  move workspace number 8
+for_window [app_id="deluge"]    move workspace number 10
+for_window [app_id="com.stremio.stremio"]  move workspace number 9
+
+# auto open terminal window in scratchpad
+exec foot --app-id="foot_scratchpad"
+for_window [app_id="foot_scratchpad"] resize set 800x300
+for_window [app_id="foot_scratchpad"] move scratchpad

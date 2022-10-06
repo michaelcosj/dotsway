@@ -1,0 +1,42 @@
+# ---------------------
+# WORKSPACES
+# ---------------------
+
+set $w1  '1'
+set $w2  '2'
+set $w3  '3'
+set $w4  '4'
+set $w5  '5'
+set $w6  '6'
+set $w7  '7'
+set $w8  '8'
+set $w9  '9'
+set $w10 '10'
+
+# Switch to workspace
+bindsym $super+1 workspace $w1
+bindsym $super+2 workspace $w2
+bindsym $super+3 workspace $w3
+bindsym $super+4 workspace $w4
+bindsym $super+5 workspace $w5
+bindsym $super+6 workspace $w6
+bindsym $super+7 workspace $w7
+bindsym $super+8 workspace $w8
+bindsym $super+9 workspace $w9
+bindsym $super+0 workspace $w10
+
+bindsym $super+Tab        workspace next
+bindsym $super+Shift+Tab  workspace prev
+bindsym $super+Escape     workspace back_and_forth
+
+# Move focused container to workspace
+bindsym $super+Shift+1 move container to workspace $w1
+bindsym $super+Shift+2 move container to workspace $w2
+bindsym $super+Shift+3 move container to workspace $w3
+bindsym $super+Shift+4 move container to workspace $w4
+bindsym $super+Shift+5 move container to workspace $w5
+bindsym $super+Shift+6 move container to workspace $w6
+bindsym $super+Shift+7 move container to workspace $w7
+bindsym $super+Shift+8 move container to workspace $w8
+bindsym $super+Shift+9 move container to workspace $w9
+bindsym $super+Shift+0 move container to workspace $w10

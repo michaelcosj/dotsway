@@ -1,0 +1,25 @@
+text-color=#dcd7ba
+background-color=#1f1f28
+progress-color=#938aa9
+border-color=#2d4f67
+border-size=2
+border-radius=1
+padding=10
+width=250
+icons=1
+max-icon-size=48
+icon-path=/usr/share/icons/Papirus/
+actions=1
+default-timeout=5000
+layer=overlay
+
+[actionable=true]
+format=<b>(A) %s</b>\n%b
+on-button-left=exec makoctl menu -n "$id" tofi --prompt-text ' Actions: ' -c ~/.config/tofi/dmenu
+
+[urgency=critical]
+text-color=#c34043
+border-color=#e82424
+
+[urgency=low]
+border-color=#dcd7ba

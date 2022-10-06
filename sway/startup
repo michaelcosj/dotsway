@@ -1,0 +1,20 @@
+## set wallpaper
+Output LVDS-1 background $HOME/.wall fill
+
+# Startup applications on login
+exec $SWAYCONFDIR/scripts/startup.sh
+
+# For setting gtk themes with lxappearance
+exec_always ~/.local/bin/scripts/import-gsettings
+
+# Lock screen after 300 secs of inactivity and turn off display after another 300 secs
+exec swayidle -w \
+          timeout 300 '$SWAYCONFDIR/scripts/lock.sh' \
+          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep '$SWAYCONFDIR/scripts/lock.sh'
+
+# bar
+bar {
+  swaybar_command waybar
+}
+

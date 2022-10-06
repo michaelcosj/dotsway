@@ -1,0 +1,15 @@
+# ---------------------
+# SWAY CONFIG
+# ---------------------
+
+set $super Mod4 
+set $SWAYCONFDIR $HOME/.config/sway
+
+include ./input
+include ./startup
+include ./windows
+include ./keybinds
+include ./workspaces
+include ./theme
+
+include /etc/sway/config.d/*

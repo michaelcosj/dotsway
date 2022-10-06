@@ -1,0 +1,21 @@
+[global]
+color = "#FFFFFF" 
+focused_color = "#FFFFFF" 
+icon = "类" 
+size = "14pt" 
+
+[app_id]
+Firefox = { icon = "" }
+foot = { icon = "" }
+
+[title]
+"crates\\.io" = { icon = "" }
+"github\\.com" = { icon = "" }
+"google\\.com" = { icon = "" }
+"google\\.com/maps" = { icon = "" }
+"mail\\.google\\.com" = { icon = "" }
+
+# use | for or
+"sr\\.ht|sourcehut\\.org" = { icon = "" }
+
+vim = { app_id = ["foot"], icon = "" }

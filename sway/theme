@@ -1,0 +1,25 @@
+# Kawagana
+set $fg #c8c093 
+set $bg #1f1f28
+
+set $sel_fg #dcd7ba
+set $sel_bg #2d4f67
+
+set $border #727169 
+set $sel_border $sel_fg
+
+set $urgent	  #e82424          
+
+default_border          pixel 2
+default_floating_border pixel 2
+
+titlebar_border_thickness 2
+
+# class                 border      background  text    indicator   child_border
+client.focused  	      $sel_border $sel_bg     $sel_fg $sel_border $sel_border
+client.focused_inactive $sel_border $bg         $fg     $sel_border $border 
+client.unfocused        $sel_border $bg         $fg     $sel_border $border 
+client.urgent  		      $urgent     $urgent     $fg     $urgent         
+
+gaps          inner 2
+font pango:FuraCode Nerd Font 11
